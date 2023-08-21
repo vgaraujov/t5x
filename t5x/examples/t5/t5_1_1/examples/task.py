@@ -2,7 +2,6 @@ import functools
 import seqio
 import tensorflow as tf
 import t5.data
-from datasets import load_from_disk, load_dataset
 from t5.data import postprocessors
 from t5.data import preprocessors
 from t5.evaluation import metrics
@@ -25,9 +24,9 @@ seqio.TaskRegistry.add(
     'spanish_span_corruption',
     source=seqio.TFExampleDataSource(
         split_to_filepattern={
-            'test': 'gs://t5-vlad-bucket/t5-data/valid.txt.tfrecords',
+            'test': 'gs://t5-vlad-bucket/t5-data/test.txt.tfrecords',
             'validation': 'gs://t5-vlad-bucket/t5-data/valid.txt.tfrecords',
-            'train': 'gs://t5-vlad-bucket/t5-data/valid.txt.tfrecords',
+            'train': 'gs://t5-vlad-bucket/t5-data/train.txt.tfrecords',
         },
         feature_description={
             'text': tf.io.FixedLenFeature([], dtype=tf.string),
