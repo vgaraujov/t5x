@@ -10,10 +10,10 @@ include 't5x/configs/runs/pretrain.gin'
 import task 
 
 MIXTURE_OR_TASK_NAME = "spanish_span_corruption"
-TASK_FEATURE_LENGTHS = {"inputs": 512, "targets": 512}
+TASK_FEATURE_LENGTHS = {"inputs": 512, "targets": 114}
 TRAIN_STEPS = 100000
 DROPOUT_RATE = 0.0
-BATCH_SIZE = 32
+BATCH_SIZE = 256
 
 
 train_script.train:
